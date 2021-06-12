@@ -1,0 +1,101 @@
+@mixin responsive {
+  @media screen and (max-width: 1024px) {
+    @content;
+    @keyframes typing {
+      from {
+        width: 0;
+      }
+      to {
+        width: 100%;
+      }
+    }
+    @keyframes typing_subtitle {
+      from {
+        opacity: 1;
+        width: 0;
+      }
+      to {
+        opacity: 1;
+        width: 100%;
+      }
+    }
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotateZ(0);
+    -webkit-transform: rotateZ(0);
+    -moz-transform: rotateZ(0);
+    -o-transform: rotateZ(0);
+
+  }
+  to {
+    transform: rotateZ(-1080deg);
+    -webkit-transform: rotateZ(-1080deg);
+    -moz-transform: rotateZ(-1080deg);
+    -o-transform: rotateZ(-1080deg);
+  }
+}
+
+@keyframes moving {
+  from {
+    visibility: visible;
+    width: 0;
+  }
+  90% {
+    visibility: visible;
+    width: 103%;
+  } 
+  to {
+    visibility: visible;
+    width: 100%;
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 60%;
+  }
+}
+
+@keyframes typing_subtitle {
+  from {
+    opacity: 1;
+    width: 0;
+  }
+  to {
+    opacity: 1;
+    width: 60%;
+  }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: orange;
+  }
+}
+
+@keyframes blink-hidden {
+  from,
+  to {
+    border-right: none;
+  }
+}
+
+@keyframes info {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
+}

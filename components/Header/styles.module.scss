@@ -1,0 +1,44 @@
+@use "../../styles/colors" as *;
+@use "../../styles/mixins" as *;
+
+.header {
+  padding: 1rem;
+  list-style: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: $blue-dark;
+  width: 100%;
+  z-index: 100;
+  display: flex;
+  .header_nav {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    @include responsive {
+      justify-content: center;
+    }
+    .header_nav_menu {
+      display: flex;
+      list-style: none;
+      .header_nav_menu_item {
+        margin: 0rem 1rem;
+        cursor: pointer;
+        & > a {
+          letter-spacing: 1px;
+          color: $font-color;
+          font-size: 18px;
+          text-decoration: none;
+          &:hover,
+          &:active, 
+          &:focus {
+            border-bottom: 1px solid $orange
+          }
+          @include responsive {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}

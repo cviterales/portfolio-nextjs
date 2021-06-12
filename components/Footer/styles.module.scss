@@ -1,0 +1,13 @@
+@use "../../styles/colors" as *;
+
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: $font-color;
+  padding: 1rem;
+  color: $blue-dark;
+  letter-spacing: 2px;
+  width: 95%;
+  margin: 0 auto;
+}

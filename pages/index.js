@@ -15,7 +15,7 @@ export default function App() {
         <meta name="description" content="Portfolio" />
         <meta name="keywords" content="Cristian Viterales" />
         <link rel="icon" href="/favicon.ico" />
-        <title>Portfolio -Cristian Viterales </title>
+        <title>Portfolio - Cristian Viterales </title>
       </Head>
       <header>
         <Header />

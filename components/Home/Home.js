@@ -1,13 +1,14 @@
 import Technology from "../../components/Technology/Technology";
 import AnimationButton from "../Animations/AnimationButton";
 import styles from "./styles.module.scss";
+import Image from '../UI/Image/Image'
 
 const Main = () => {
   return (
     <section className={styles.main}>
       <div className={styles.main_wrapper}>
         <div className={styles.main_wrapper_container}>
-          <img className={styles.main_wrapper_container_img} src="./images/1b.jpg" alt="me" />
+          <Image src="./images/1b.jpg" alt="me" />
         </div>
       </div>
       <div className={styles.main_wrapper}>

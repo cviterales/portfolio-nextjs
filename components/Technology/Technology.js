@@ -1,10 +1,10 @@
 import styles from "./styles.module.scss";
-import Image from '../UI/Image/Image'
+import Img from '../UI/Image/Img'
 
 const Technology = ({tech}) => {
   return (
     <div className={styles.technology}>
-      <Image src={`./logos/${tech}.svg`} alt={tech} />
+      <Img src={`/logos/${tech}.svg`} alt={tech} />
     </div>
   );
 };

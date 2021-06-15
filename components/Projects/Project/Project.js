@@ -1,7 +1,7 @@
 import AnimatedButton from "../../Animations/AnimationButton";
 import styles from "./styles.module.scss";
 import Technology from "../../Technology/Technology";
-import Image from '../../UI/Image/Image'
+import Img from '../../UI/Image/Img'
 
 const Project = ({ src, title, techs, gh, demo }) => {
 
@@ -19,7 +19,7 @@ const Project = ({ src, title, techs, gh, demo }) => {
   return (
     <div className={styles.project}>
       <div className={styles.project_content}>
-        <Image src={src} alt={"project"}/>
+        <Img src={src} alt={"project"}/>
       </div>
       <p className={styles.project_title}>{title}</p>
       <ul className={styles.project_technologies}>{technologyHandler()}</ul>

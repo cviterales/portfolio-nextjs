@@ -1,11 +1,12 @@
 import useProgressiveImg from '../../../hook/useProgressiveImg';
+import Image from 'next/image'
 
 const Image = ({ src, alt }) => {
   const [srcImg, { blur }] = useProgressiveImg(src, src);
 
   return (
     <>
-      <img
+      <Image
         src={srcImg}
         alt={alt}
         style={{

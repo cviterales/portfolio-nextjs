@@ -1,8 +1,6 @@
-import useProgressiveImg from "../../../hook/useProgressiveImg";
 import Image from "next/Image";
 
 const Img = ({ src, alt }) => {
-  const [srcImg, { blur }] = useProgressiveImg(src, src);
 
   return (
     <div
@@ -12,26 +10,14 @@ const Img = ({ src, alt }) => {
         position: "relative",
       }}
     >
-      {blur ? (
-        <img
-          src={srcImg}
-          alt=""
-          style={{
-            filter: blur ? "blur(20px)" : "none",
-            transition: blur ? "none" : "filter 0.3s ease-out",
-            width: "100%",
-            height: "100%",
-            objectFit: "contain",
-          }}
-        />
-      ) : (
         <Image
-          src={srcImg}
+          src={src}
           alt={alt}
-          layout={"fill"}
-          objectFit={"cover"}
+          layout="fill"
+          objectFit="cover"
+          placeholder="blur"
+          blurDataURL={src}
         />
-      )}
     </div>
   );
 };

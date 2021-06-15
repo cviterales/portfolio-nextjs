@@ -7,11 +7,8 @@ const Img = ({ src, alt }) => {
   return (
     <div
       style={{
-        filter: blur ? "blur(20px)" : "none",
-        transition: blur ? "none" : "filter 0.3s ease-out",
         width: "100%",
         height: "100%",
-        objectFit: "contain",
         position: "relative",
       }}
     >

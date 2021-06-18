@@ -19,7 +19,7 @@ const Project = ({ src, title, techs, gh, demo }) => {
   return (
     <div className={styles.project}>
       <div className={styles.project_content}>
-        <Img src={src} alt={"project"}/>
+        <Img src={src} alt={"project"} objFit="cover"/>
       </div>
       <p className={styles.project_title}>{title}</p>
       <ul className={styles.project_technologies}>{technologyHandler()}</ul>

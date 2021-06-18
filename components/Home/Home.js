@@ -8,7 +8,7 @@ const Main = () => {
     <section className={styles.main}>
       <div className={styles.main_wrapper}>
         <div className={styles.main_wrapper_container}>
-          <Img src="/images/1b.jpg" alt="me" />
+          <Img src="/images/1b.jpg" alt="me" objFit="cover"/>
         </div>
       </div>
       <div className={styles.main_wrapper}>
@@ -20,7 +20,8 @@ const Main = () => {
             I have experience in creating web and mobile applications <br />
             with JavaScript, Reactjs, React Native, Nodejs and other technologies.
           </p>
-          <div className={styles.main_wrapper_content_info}>
+        </div>
+        <div className={styles.main_wrapper_content_info}>
             <a
               href="https://www.linkedin.com/in/cristian-viterales"
               target="_blank"
@@ -38,7 +39,6 @@ const Main = () => {
               </AnimationButton>
             </a>
           </div>
-        </div>
       </div>
     </section>
   );

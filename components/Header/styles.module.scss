@@ -2,15 +2,11 @@
 @use "../../styles/mixins" as *;
 
 .header {
-  padding: 1rem;
-  list-style: none;
+  padding: 0.5rem 0rem;
   position: fixed;
-  top: 0;
-  left: 0;
   background-color: $blue-dark;
   width: 100%;
-  z-index: 100;
-  display: flex;
+  z-index: 1;
   .header_nav {
     display: flex;
     justify-content: flex-end;
@@ -36,10 +32,16 @@
             transform: scale(1.5);
             color: $orange;
             transition: all 0.1s;
+            @include responsive {
+              font-size: 14px;
+            }
           }
           @include responsive {
-            font-size: 14px;
+            font-size: 12px;
           }
+        }
+        @include responsive {
+          margin: 0rem 0.8rem;
         }
       }
     }

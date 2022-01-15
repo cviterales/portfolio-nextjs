@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-const Img = ({ src, alt, objFit="contain" }) => {
+const Img = ({ src, alt, objFit= "contain", blur = false }) => {
 
   return (
     <div
@@ -15,7 +15,7 @@ const Img = ({ src, alt, objFit="contain" }) => {
           alt={alt}
           layout="fill"
           objectFit={objFit}
-          placeholder="blur"
+          placeholder={blur ? "blur" : 'none'}
           blurDataURL={src}
         />
     </div>

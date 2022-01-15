@@ -21,4 +21,5 @@ export const technologies = [
   "github",
   "git",
   "jira",
+  "stencil"
 ];

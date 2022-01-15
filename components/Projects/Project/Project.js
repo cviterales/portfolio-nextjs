@@ -2,9 +2,9 @@ import AnimatedButton from "../../Animations/AnimationButton";
 import styles from "./styles.module.scss";
 import Technology from "../../Technology/Technology";
 import Img from '../../UI/Image/Img'
+import Card from "../../UI/Card/Card";
 
 const Project = ({ src, title, techs, gh, demo }) => {
-
   
   const technologyHandler = () => {
     return techs.map((technology, i) => {
@@ -17,9 +17,9 @@ const Project = ({ src, title, techs, gh, demo }) => {
   };
 
   return (
-    <div className={styles.project}>
+    <Card styles={styles.project}>
       <div className={styles.project_content}>
-        <Img src={src} alt={"project"} objFit="cover"/>
+        <Img src={src} alt={"project"} objFit="cover" blur={true}/>
       </div>
       <p className={styles.project_title}>{title}</p>
       <ul className={styles.project_technologies}>{technologyHandler()}</ul>
@@ -49,7 +49,7 @@ const Project = ({ src, title, techs, gh, demo }) => {
           </a>
         </AnimatedButton>
       </div>
-    </div>
+    </Card>
   );
 };
 

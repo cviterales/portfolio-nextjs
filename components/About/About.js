@@ -2,9 +2,8 @@ import styles from "./styles.module.scss";
 import Technology from "../Technology/Technology";
 import { technologies } from "../../techs";
 import { Element } from "react-scroll";
-const Card = ({ children }) => {
-  return <div className={styles.card}>{children}</div>;
-};
+import Title from "../UI/Title/Title";
+import Card from "../UI/Card/Card";
 
 const About = () => {
   const technologyHandler = (techs) => {
@@ -21,10 +20,10 @@ const About = () => {
   return (
     <section className={styles.about}>
       <Element name="about">
-        <h1 className={styles.title}>{"{ About : Me }"}</h1>
+        <Title text={"{ About : Me }"} color={'#e7ecef'} />
         <div className={styles.wrapper}>
           <div className={styles.content}>
-            <Card>
+            <Card styles={styles.card}>
               <p className={styles.content_title}>Something about me ...</p>
               <p className={styles.content_info}>
                 My name is Cristian Viterales, <br />
@@ -33,7 +32,7 @@ const About = () => {
                 is that <strong>I love and enjoy coding.</strong>
               </p>
             </Card>
-            <Card>
+            <Card styles={styles.card}>
               <p className={styles.content_title}>... and some of my experience</p>
               <p className={styles.content_info}>
                 I have been a software developer since 2009. In this way I have worked on frontend, backend and database
@@ -46,7 +45,7 @@ const About = () => {
             </Card>
           </div>
           <div className={styles.content}>
-            <Card>
+            <Card styles={styles.card}>
               <p className={styles.content_title}>{"{ Some technologies I use and have experience }"}</p>
               <ul className={styles.content_list}>{technologyHandler(technologies)}</ul>
             </Card>

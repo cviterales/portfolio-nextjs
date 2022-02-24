@@ -11,10 +11,6 @@ export default function App() {
     <div className={styles.wrapper}>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#ffffff" />
-        <meta name="description" content="Portfolio" />
-        <meta name="keywords" content="Cristian Viterales" />
-        <link rel="icon" href="/favicon.ico" />
         <title>Portfolio - Cristian Viterales </title>
       </Head>
       <header>

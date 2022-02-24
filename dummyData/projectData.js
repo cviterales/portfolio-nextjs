@@ -1,20 +1,20 @@
 export const projectData = [
   {
-    img: "/images/mtn.jpg",
+    img: "/images/mtn.webp",
     title: "Movie to Night",
     techs: ["react", "sass"],
     gh: "https://github.com/cviterales/movie-to-night",
     demo: "https://cviterales.github.io/movie-to-night/#/",
   },
   {
-    img: "/images/ag.png",
+    img: "/images/ag.webp",
     title: "Autogestión",
     techs: ["angular", "typescript", "redux", "sass", "nodejs", "express", "mysql"],
     gh: "https://autogestion.batan.coop/#/",
     demo: "https://autogestion.batan.coop/#/",
   },
   {
-    img: "/images/tmc.png",
+    img: "/images/tmc.webp",
     title: "Task Manager",
     techs: [
       "react",
@@ -29,14 +29,14 @@ export const projectData = [
     demo: "http://181.41.240.26",
   },
   {
-    img: "/images/btv.png",
+    img: "/images/btv.webp",
     title: "Batan TV",
     techs: ["react", "redux", "sass", "nodejs", "express", "mongodb"],
     gh: "https://github.com/cviterales/batan-tv",
     demo: "https://batan.tv/#/",
   },
   {
-    img: "/images/mn.png",
+    img: "/images/mn.webp",
     title: "Monitor",
     techs: [
       "react",
@@ -51,7 +51,7 @@ export const projectData = [
     demo: "https://github.com/franngette/monitor-front-end",
   },
   {
-    img: "/images/sh.png",
+    img: "/images/sh.webp",
     title: "Shop App",
     techs: ["react native", "redux", "firebase"],
     gh: "https://github.com/cviterales/the-shop-app",

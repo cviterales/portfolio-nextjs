@@ -9,12 +9,12 @@ const Main = () => {
     <section className={styles.main}>
       <div className={styles.main_wrapper}>
         <div className={styles.main_wrapper_container}>
-          <Img src="/images/1b.jpg" alt="me" objFit="cover"/>
+          <Img src="/images/1b.webp" alt="me" objFit="cover" />
         </div>
       </div>
       <div className={styles.main_wrapper}>
         <div className={styles.main_wrapper_content}>
-          <p className={styles.main_wrapper_content_title}><MdWavingHand className={styles.main_wrapper_content_title_icon}/> Hi! I'm Cristian.</p>
+          <p className={styles.main_wrapper_content_title}><MdWavingHand className={styles.main_wrapper_content_title_icon} /> Hi! I'm Cristian.</p>
           <p className={styles.main_wrapper_content_subtitle}>I'm Sofware Developer.</p>
           <p className={styles.main_wrapper_content_description}>
             I love programming, <br />
@@ -23,23 +23,23 @@ const Main = () => {
           </p>
         </div>
         <div className={styles.main_wrapper_content_info}>
-            <a
-              href="https://www.linkedin.com/in/cristian-viterales"
-              target="_blank"
-              aria-label="LinkedIn"
-              rel="noopener noreferrer"
-            >
-              <AnimationButton>
-                <Technology tech={"linkedin"} />
-              </AnimationButton>
-            </a>
+          <a
+            href="https://www.linkedin.com/in/cristian-viterales"
+            target="_blank"
+            aria-label="LinkedIn"
+            rel="noopener noreferrer"
+          >
+            <AnimationButton>
+              <Technology tech={"linkedin"} />
+            </AnimationButton>
+          </a>
 
-            <a href="https://github.com/cviterales" target="_blank" aria-label="GitHub" rel="noopener noreferrer">
-              <AnimationButton>
-                <Technology tech={"github"} />
-              </AnimationButton>
-            </a>
-          </div>
+          <a href="https://github.com/cviterales" target="_blank" aria-label="GitHub" rel="noopener noreferrer">
+            <AnimationButton>
+              <Technology tech={"github"} />
+            </AnimationButton>
+          </a>
+        </div>
       </div>
     </section>
   );

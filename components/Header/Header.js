@@ -1,18 +1,6 @@
 import styles from "./styles.module.scss";
-import { scroller } from 'react-scroll';
-
-const scrollType = {
-  duration: 500,
-  delay: 50,
-  smooth: true, // linear “easeInQuint” “easeOutCubic” 
-  offset: -10,
-};
 
 const Header = () => {
-
-  const scrollHandler = (element) => {
-    scroller.scrollTo(element, scrollType);
-  }
 
   return (
     <section className={styles.header}>
@@ -20,17 +8,15 @@ const Header = () => {
         <ul className={styles.header_nav_menu}>
           <li className={styles.header_nav_menu_item}>
             <a
-              id="projects"
               href="#projects"
               aria-label="Projects"
               rel="noopener noreferrer"
-              onClick={(e) => {scrollHandler(e.target.id)}}
             >
               Projects
             </a>
           </li>
           <li className={styles.header_nav_menu_item}>
-            <a id="about" href="#about" aria-label="About" rel="noopener noreferrer" onClick={(e) => {scrollHandler(e.target.id)}}>
+            <a href="#about" aria-label="About" rel="noopener noreferrer">
               About
             </a>
           </li>

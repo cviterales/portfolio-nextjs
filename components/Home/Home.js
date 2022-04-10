@@ -1,5 +1,4 @@
 import Technology from "../../components/Technology/Technology";
-import AnimationButton from "../Animations/AnimationButton";
 import styles from "./styles.module.scss";
 import Img from '../UI/Image/Img'
 import { MdWavingHand } from 'react-icons/md';
@@ -29,15 +28,11 @@ const Main = () => {
             aria-label="LinkedIn"
             rel="noopener noreferrer"
           >
-            <AnimationButton>
-              <Technology tech={"linkedin"} />
-            </AnimationButton>
+            <Technology tech={"linkedin"} />
           </a>
 
           <a href="https://github.com/cviterales" target="_blank" aria-label="GitHub" rel="noopener noreferrer">
-            <AnimationButton>
-              <Technology tech={"github"} />
-            </AnimationButton>
+            <Technology tech={"github"} />
           </a>
         </div>
       </div>

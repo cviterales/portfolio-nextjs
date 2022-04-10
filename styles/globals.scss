@@ -19,10 +19,13 @@
   outline: none;
 }
 
+html {
+  scroll-behavior: smooth;
+}
 body {
   width: 100%;
   height: 100%;
-  font-family: "Inter-Regular", "Inter-Bold"/* , "Roboto", "Roboto Bold" */;
+  font-family: "Inter-Regular", "Inter-Bold";
   background-color: $font_color;
   color: $font_color;
 }

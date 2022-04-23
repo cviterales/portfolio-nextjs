@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
 
 const container = {
   hidden: { opacity: 1, scale: 0 },
@@ -14,17 +13,13 @@ const container = {
   }
 };
 
-const AnimationList = ({ children, className}) => {
+const AnimationList = ({ children, className, isVisible }) => {
   const controls = useAnimation();
-  const [ref, inView] = useInView();
-
   useEffect(() => {
-    if (inView) controls.start("visible");
-  }, [inView])
+    if (isVisible) controls.start("visible");
+  }, [isVisible])
 
-  return (
-  <motion.ul
-    ref={ref}
+  return <motion.ul
     className={className}
     variants={container}
     initial="hidden"
@@ -32,9 +27,8 @@ const AnimationList = ({ children, className}) => {
   >
     {children}
   </motion.ul>
-  )
 }
-  
+
 
 
 export default AnimationList;

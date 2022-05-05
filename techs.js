@@ -14,6 +14,7 @@ export const technologies = [
   "mongodb",
   "nextjs",
   "angular",
+  "stencil",
   "php",
   "socketio",
   "yarn",
@@ -21,5 +22,5 @@ export const technologies = [
   "github",
   "git",
   "jira",
-  "stencil"
+  "jest"
 ];

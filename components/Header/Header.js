@@ -1,9 +1,18 @@
+import Img from "../UI/Image/Img";
 import styles from "./styles.module.scss";
 
 const Header = () => {
 
   return (
     <section className={styles.header}>
+      <a 
+        className={styles.header_icon}
+        href="#home"
+        aria-label="Projects"
+        rel="noopener noreferrer"
+      >
+        <Img src={`/logos/code.svg`} alt={"logo"} />
+      </a>
       <nav className={styles.header_nav}>
         <ul className={styles.header_nav_menu}>
           <li className={styles.header_nav_menu_item}>

@@ -5,7 +5,7 @@ import { MdWavingHand } from 'react-icons/md';
 
 const Main = () => {
   return (
-    <section className={styles.main}>
+    <section className={styles.main} id="home">
       <div className={styles.main_wrapper}>
         <div className={styles.main_wrapper_container}>
           <Img src="/images/1b.webp" alt="me" objFit="cover" />

@@ -11,7 +11,7 @@ const Header = () => {
         aria-label="Projects"
         rel="noopener noreferrer"
       >
-        <Img src={`/logos/code.svg`} alt={"logo"} />
+        <Img src={`/logos/code.svg`} alt={"logo"} priority/>
       </a>
       <nav className={styles.header_nav}>
         <ul className={styles.header_nav_menu}>

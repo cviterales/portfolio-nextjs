@@ -8,7 +8,7 @@ const Main = () => {
     <section className={styles.main} id="home">
       <div className={styles.main_wrapper}>
         <div className={styles.main_wrapper_container}>
-          <Img src="/images/1b.webp" alt="me" objFit="cover" />
+          <Img src="/images/1b.webp" alt="me" objFit="cover" priority />
         </div>
       </div>
       <div className={styles.main_wrapper}>

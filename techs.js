@@ -1,6 +1,6 @@
 export const technologies = [
   "react",
-  "react native",
+  "reactnative",
   "redux",
   "sass",
   "css3",

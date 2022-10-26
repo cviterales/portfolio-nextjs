@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-const Img = ({ src, alt, objFit= "contain"}) => {
+const Img = ({ src, alt, priority=false, objFit="contain"}) => {
 
   return (
     <div
@@ -13,10 +13,12 @@ const Img = ({ src, alt, objFit= "contain"}) => {
         <Image
           src={src}
           alt={alt}
-          layout="fill"
-          objectFit={objFit}
-          placeholder="blur"
-          blurDataURL={src}
+          fill
+          priority={priority}
+          sizes="(max-width: 768px) 70vw,
+          (max-width: 1200px) 50vw,
+          33vw"
+          style={{objectFit: objFit}}
         />
     </div>
   );

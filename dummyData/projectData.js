@@ -53,7 +53,7 @@ export const projectData = [
   {
     img: "/images/sh.webp",
     title: "Shop App",
-    techs: ["react native", "redux", "firebase"],
+    techs: ["reactnative", "redux", "firebase"],
     gh: "https://github.com/cviterales/the-shop-app",
     demo: "https://github.com/cviterales/the-shop-app",
   },

@@ -1,9 +1,9 @@
-import Technology from "../../components/Technology/Technology";
 import styles from "./styles.module.scss";
-import Img from '../UI/Image/Img'
 import { MdWavingHand } from 'react-icons/md';
+import Img from "../../Atoms/Image/Img";
+import Technology from "../../Molecules/Technology/Technology";
 
-const Main = () => {
+const Home = () => {
   return (
     <section className={styles.main} id="home">
       <div className={styles.main_wrapper}>
@@ -40,4 +40,4 @@ const Main = () => {
   );
 };
 
-export default Main;
+export default Home;

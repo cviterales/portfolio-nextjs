@@ -1,8 +1,8 @@
 import AnimatedButton from "../../Animations/Button/AnimationButton";
 import styles from "./styles.module.scss";
-import Technology from "../../Technology/Technology";
-import Img from '../../UI/Image/Img'
-import Card from "../../UI/Card/Card";
+import Technology from "../Technology/Technology"
+import Img from "../../Atoms/Image/Img";
+import Card from "../../Atoms/Card/Card";
 
 const Project = ({ src, title, techs, gh, demo }) => {
 

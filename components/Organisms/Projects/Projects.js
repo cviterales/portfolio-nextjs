@@ -1,10 +1,10 @@
 import { useInView } from "react-intersection-observer";
+import { projectData } from "../../../dummyData/projectData";
+import Project from "../../Molecules/Project/Project";
+import AnimationList from "../../Animations/List/AnimationList";
+import AnimationItem from "../../Animations/List/Item/AnimationItem";
+import Title from "../../Atoms/Title/Title";
 import styles from "./styles.module.scss";
-import Project from "./Project/Project";
-import { projectData } from "../../dummyData/projectData";
-import Title from "../UI/Title/Title";
-import AnimationList from "../Animations/List/AnimationList";
-import AnimationItem from "../Animations/List/Item/AnimationItem";
 
 const Projects = () => {
   const projects = projectData;

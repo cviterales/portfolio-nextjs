@@ -1,8 +1,8 @@
 import styles from "./styles.module.scss";
-import Technology from "../Technology/Technology";
-import { technologies } from "../../techs";
-import Title from "../UI/Title/Title";
-import Card from "../UI/Card/Card";
+import Technology from "../../Molecules/Technology/Technology";
+import { technologies } from "../../../dummyData/techs";
+import Title from "../../Atoms/Title/Title";
+import Card from "../../Atoms/Card/Card";
 
 const About = () => {
   const technologyHandler = (techs) => {

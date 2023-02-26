@@ -1,9 +1,10 @@
 import Head from "next/head";
-import Header from "../components/Header/Header";
-import Home from "../components/Home/Home";
-import Projects from "../components/Projects/Projects";
-import About from "../components/About/About";
-import Footer from "../components/Footer/Footer";
+import About from "../components/Organisms/About/About";
+import Footer from "../components/Organisms/Footer/Footer";
+import Header from "../components/Organisms/Header/Header";
+import Home from "../components/Organisms/Home/Home";
+import Projects from "../components/Organisms/Projects/Projects";
+
 
 
 export default function App() {

@@ -13,8 +13,14 @@ const Home = () => {
       </div>
       <div className={styles.main_wrapper}>
         <div className={styles.main_wrapper_content}>
-          <p className={styles.main_wrapper_content_title}><MdWavingHand className={styles.main_wrapper_content_title_icon} /> Hi! I'm Cristian.</p>
-          <p className={styles.main_wrapper_content_subtitle}>I'm Sofware Developer.</p>
+          <p className={styles.main_wrapper_content_title}>
+            <span className={styles.typewriter}>
+              <MdWavingHand className={styles.main_wrapper_content_title_icon} /> Hi! I'm Cristian.
+            </span>
+          </p>
+          <p className={styles.main_wrapper_content_subtitle}>
+            <span className={styles.typewriter}>I'm Sofware Developer.</span>
+          </p>
           <p className={styles.main_wrapper_content_description}>
             I love programming, <br />
             I have experience in creating web and mobile applications <br />

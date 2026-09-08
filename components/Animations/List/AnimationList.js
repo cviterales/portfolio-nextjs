@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 
@@ -17,7 +19,7 @@ const AnimationList = ({ children, className, isVisible }) => {
   const controls = useAnimation();
   useEffect(() => {
     if (isVisible) controls.start("visible");
-  }, [isVisible])
+  }, [isVisible, controls]);
 
   return <motion.ul
     className={className}

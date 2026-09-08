@@ -5,9 +5,8 @@
     color: $blue-dark;
     text-align: center;
     margin: 4rem 0rem;
-    font-weight: bold;
+    font-weight: 700;
     font-size: 40px;
-    font-family: "Inter-Bold";
     @include responsive {
         font-size: 30px;
     }

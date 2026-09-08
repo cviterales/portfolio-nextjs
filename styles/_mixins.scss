@@ -1,24 +1,6 @@
 @mixin responsive {
   @media screen and (max-width: 1024px) {
     @content;
-    @keyframes typing {
-      from {
-        width: 0;
-      }
-      to {
-        width: 100%;
-      }
-    }
-    @keyframes typing_subtitle {
-      from {
-        opacity: 1;
-        width: 0;
-      }
-      to {
-        opacity: 1;
-        width: 100%;
-      }
-    }
   }
 }
 
@@ -53,23 +35,25 @@
   }
 }
 
+// Efecto typewriter: el elemento animado mide max-content (ancho real del
+// texto), por lo que animar su width de 0 a 100% revela el texto exactamente,
+// dejando el cursor (border-right) pegado a la ultima letra en cualquier
+// viewport. Los "steps" definen la cadencia de tipeo.
 @keyframes typing {
   from {
     width: 0;
   }
   to {
-    width: 60%;
+    width: 100%;
   }
 }
 
 @keyframes typing_subtitle {
   from {
-    opacity: 1;
     width: 0;
   }
   to {
-    opacity: 1;
-    width: 70%;
+    width: 100%;
   }
 }
 

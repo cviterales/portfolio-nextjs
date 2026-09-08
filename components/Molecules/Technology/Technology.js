@@ -1,15 +1,17 @@
 import styles from "./styles.module.scss";
-import Img from '../../Atoms/Image/Img'
-import AnimatedButton from "../../Animations/Button/AnimationButton";
 
 const Technology = ({ tech }) => {
   return (
-    <AnimatedButton>
-      <div className={styles.technology}>
-        <Img src={`/logos/${tech}.svg`} alt={tech} />
-      </div>
-    </AnimatedButton>
-
+    <div className={`${styles.technology} hoverScale`}>
+      <img
+        src={`/logos/${tech}.svg`}
+        alt={tech}
+        width={40}
+        height={40}
+        loading="lazy"
+        decoding="async"
+      />
+    </div>
   );
 };
 

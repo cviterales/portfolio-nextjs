@@ -1,3 +1,5 @@
+"use client";
+
 import { useInView } from "react-intersection-observer";
 import { projectData } from "../../../dummyData/projectData";
 import Project from "../../Molecules/Project/Project";
@@ -8,7 +10,9 @@ import styles from "./styles.module.scss";
 
 const Projects = () => {
   const projects = projectData;
-  const [ref, inView] = useInView();
+  // triggerOnce: la animacion de entrada corre una sola vez; evita re-disparos
+  // al entrar/salir del viewport con el scroll.
+  const [ref, inView] = useInView({ triggerOnce: true });
 
   const projectsHandler = (projects) => {
     return projects.map((project, i) => {

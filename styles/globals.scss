@@ -1,17 +1,5 @@
 @use "./colors" as *;
 
-@font-face {
-  font-family: "Inter-Bold";
-  src: local("Inter-Bold"), url(/fonts/Inter-Bold.ttf) format("truetype");
-  font-display: fallback;
-}
-
-@font-face {
-  font-family: "Inter-Regular";
-  src: local("Inter-Regular"), url(/fonts/Inter-Regular.ttf) format("truetype");
-  font-display: fallback;
-}
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -19,13 +7,15 @@
   outline: none;
 }
 
-html {
-  scroll-behavior: smooth;
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
 }
 body {
   width: 100%;
   height: 100%;
-  font-family: "Inter-Regular", "Inter-Bold";
+  font-family: var(--font-inter), sans-serif;
   background-color: $font_color;
   color: $font_color;
 }
@@ -33,6 +23,42 @@ body {
 .wrapper {
   display: flex;
   flex-direction: column;
+}
+
+// Micro-interaccion de escala en hover/tap sin JS (reemplaza framer-motion).
+.hoverScale {
+  display: inline-flex;
+  transition: transform 0.2s ease;
+  will-change: transform;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &:active {
+    transform: scale(0.8);
+  }
+}
+
+// Respeto a usuarios que prefieren menos movimiento.
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .hoverScale {
+    transition: none;
+
+    &:hover,
+    &:active {
+      transform: none;
+    }
+  }
 }
 
 

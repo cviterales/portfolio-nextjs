@@ -13,14 +13,13 @@
     color: $blue-dark;
     text-align: center;
     margin: 4rem 0rem;
-    font-weight: bold;
+    font-weight: 700;
     font-size: 40px;
-    font-family: "Inter-Bold";
   }
   .projects_list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     .projects_list_items {
       list-style: none;
       @include responsive {

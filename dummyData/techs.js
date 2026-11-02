@@ -20,6 +20,7 @@ export const technologies = [
   "cypress",
   "redis",
   "socketio",
+  "kafka",
   "mysql",
   "postgresSQL",
   "firebase",

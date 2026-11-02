@@ -4,6 +4,7 @@ export const technologies = [
   "react",
   "nextjs",
   "vitejs",
+  "remix",
   "angular",
   "reactnative",
   "sass",

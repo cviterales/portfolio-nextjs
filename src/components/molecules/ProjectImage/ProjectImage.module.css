@@ -17,15 +17,18 @@
    desplazamiento vertical en loop (ida y vuelta). */
 .animated {
   position: relative;
-  /* Alto propio del visor por el que se recorre la captura. No depende de la
-     cadena flex del modal, que con container-type colapsaría a 0. */
-  height: min(68vh, 560px);
-  /* Habilita las unidades de container query (cqh) para el cálculo del recorrido. */
-  container-type: size;
+  /* Llena el espacio que le deja el modal (flex) y puede encogerse, con un tope
+     viewport para no crecer de más. El recorrido se mide en JS, así que no hace
+     falta `container-type` (colapsaría a 0 sin alto definido en la cadena). */
+  height: 100%;
+  max-height: min(68vh, 560px);
+  min-height: 0;
 }
 
+/* El recorrido en píxeles lo calcula el componente (--scroll-travel) según el
+   alto renderizado; mientras no esté listo, la imagen queda quieta en el tope. */
 .animated .shot {
-  animation: autoscroll 18s ease-in-out infinite alternate;
+  animation: autoscroll var(--scroll-duration, 18s) ease-in-out infinite alternate;
 }
 
 /* Pausa el recorrido al pasar el mouse para poder mirar con calma. */
@@ -39,7 +42,7 @@
   }
   to {
     /* Sube la imagen hasta dejar ver su parte inferior dentro del marco. */
-    transform: translateY(calc(-100% + 100cqh));
+    transform: translateY(calc(-1 * var(--scroll-travel, 0px)));
   }
 }
 

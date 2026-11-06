@@ -23,26 +23,38 @@ const MAX_DURATION = 40;
  * mouse y respeta `prefers-reduced-motion`. La duración se calcula por el alto
  * renderizado para que todas las capturas recorran a la misma velocidad.
  */
+type Scroll = {
+  /** Píxeles que recorre la imagen dentro del marco. */
+  travel: number;
+  /** Duración del recorrido en segundos. */
+  duration: number;
+};
+
 export default function ProjectImage({ image, animate = false }: ProjectImageProps) {
-  const [duration, setDuration] = useState<number | null>(null);
+  const [scroll, setScroll] = useState<Scroll | null>(null);
 
   const onLoad = (event: SyntheticEvent<HTMLImageElement>): void => {
     if (!animate) return;
     const rendered = event.currentTarget.getBoundingClientRect().height;
     const frame = event.currentTarget.parentElement?.clientHeight ?? 0;
     const travel = Math.max(0, rendered - frame);
-    const seconds = Math.min(MAX_DURATION, Math.max(MIN_DURATION, travel / SCROLL_SPEED));
-    setDuration(seconds);
+    const duration = Math.min(MAX_DURATION, Math.max(MIN_DURATION, travel / SCROLL_SPEED));
+    setScroll({ travel, duration });
   };
 
   // La captura entra a ancho completo con alto natural; las dimensiones reales
   // las resuelve el navegador (width/height 0 + sizes es el patrón de Next para
-  // imágenes responsive de relación de aspecto desconocida).
+  // imágenes responsive de relación de aspecto desconocida). El recorrido se
+  // calcula en JS y se pasa por variables CSS, así el marco no necesita
+  // `container-type` (que colapsaría a 0 sin un alto definido en la cadena).
   const style: CSSProperties = {
     width: "100%",
     height: "auto",
-    ...(animate && duration !== null
-      ? ({ "--scroll-duration": `${duration}s` } as CSSProperties)
+    ...(animate && scroll !== null
+      ? ({
+          "--scroll-duration": `${scroll.duration}s`,
+          "--scroll-travel": `${scroll.travel}px`,
+        } as CSSProperties)
       : {}),
   };
 

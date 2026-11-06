@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type CSSProperties, type SyntheticEvent } from "react";
+import Image from "next/image";
 import styles from "./ProjectImage.module.css";
 import type { ProjectImageContent } from "@/types/project";
 
@@ -34,18 +35,26 @@ export default function ProjectImage({ image, animate = false }: ProjectImagePro
     setDuration(seconds);
   };
 
-  const style =
-    animate && duration !== null
+  // La captura entra a ancho completo con alto natural; las dimensiones reales
+  // las resuelve el navegador (width/height 0 + sizes es el patrón de Next para
+  // imágenes responsive de relación de aspecto desconocida).
+  const style: CSSProperties = {
+    width: "100%",
+    height: "auto",
+    ...(animate && duration !== null
       ? ({ "--scroll-duration": `${duration}s` } as CSSProperties)
-      : undefined;
+      : {}),
+  };
 
   return (
     <div className={animate ? `${styles.frame} ${styles.animated}` : styles.frame}>
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
+      <Image
         className={styles.shot}
         src={image.src}
         alt={image.alt}
+        width={0}
+        height={0}
+        sizes="100vw"
         loading="lazy"
         style={style}
         onLoad={onLoad}

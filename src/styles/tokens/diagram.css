@@ -1,0 +1,13 @@
+/* Generado por scripts/generate-tokens.mjs desde src/styles/palette.mjs. No editar a mano. */
+:root {
+  --diagram-bg: var(--color-black-950);
+  --diagram-surface: var(--color-diagram-surface);
+  --diagram-surface-2: var(--color-diagram-surface-2);
+  --diagram-border: var(--color-diagram-border);
+  --diagram-idle: var(--color-diagram-idle);
+  --diagram-accent: var(--color-orange-500);
+  --diagram-accent-deep: var(--color-orange-600);
+  --diagram-request: var(--color-diagram-request);
+  --diagram-ink: var(--color-diagram-ink);
+  --diagram-muted: var(--color-diagram-muted);
+}

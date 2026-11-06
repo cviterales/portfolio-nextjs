@@ -1,0 +1,18 @@
+.list {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
+}
+
+@media (max-width: 768px) {
+  /* El nav crece para ocupar el espacio junto al logo y centra sus enlaces. */
+  .nav {
+    flex: 1;
+  }
+
+  .list {
+    justify-content: center;
+    gap: 20px;
+  }
+}

@@ -1,0 +1,14 @@
+.flow {
+  display: grid;
+  align-items: start;
+  padding-bottom: 8px;
+  list-style: none;
+}
+
+@media (max-width: 768px) {
+  /* Pisa el número de columnas inline: una sola columna, zigzag vertical. */
+  .flow {
+    grid-template-columns: 1fr !important;
+    gap: 28px;
+  }
+}

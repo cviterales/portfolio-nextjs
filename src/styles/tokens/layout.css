@@ -1,0 +1,5 @@
+:root {
+  /* Ancho máximo del contenido y margen lateral. Se define una sola vez. */
+  --container-max: 1200px;
+  --container-gutter: 20px;
+}

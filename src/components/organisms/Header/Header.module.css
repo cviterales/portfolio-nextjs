@@ -1,0 +1,70 @@
+/* Fijo arriba: el preheader, que va antes en el flujo, se va con el scroll. */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  width: 100%;
+  background: var(--bg-surface-glass);
+  border-bottom: 1px solid var(--border-default);
+  backdrop-filter: blur(12px);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 14px 20px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* CTA del Hero: oculto mientras el Hero está en pantalla, aparece al scrollear. */
+.cta {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-4px);
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+.ctaVisible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cta {
+    transition: none;
+  }
+}
+
+/* Por defecto (desktop) se ven los sociales con reveal; el bloque mobile se oculta. */
+.socialMobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .socialDesktop {
+    display: none;
+  }
+
+  .socialMobile {
+    display: flex;
+  }
+
+  /* Segunda fila a ancho completo: sociales a la izquierda, contacto a la derecha. */
+  .actions {
+    flex-basis: 100%;
+    justify-content: space-between;
+  }
+}

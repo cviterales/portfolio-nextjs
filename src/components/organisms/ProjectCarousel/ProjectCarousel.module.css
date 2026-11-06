@@ -1,0 +1,162 @@
+.carousel {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+/* Contenedor relativo: ancla las flechas a los lados del track. */
+.viewport {
+  position: relative;
+  width: 100%;
+}
+
+.track {
+  position: relative;
+  display: flex;
+  gap: 24px;
+  padding-bottom: 12px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  /* Desvanece lo que asoma por los bordes para que lo que no estás viendo del
+     todo quede difuminado hacia los lados. */
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    #000 10%,
+    #000 90%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    #000 10%,
+    #000 90%,
+    transparent 100%
+  );
+}
+
+.track::-webkit-scrollbar {
+  display: none;
+}
+
+/* Una tarjeta por "parada". El diagrama es ancho (~2:1), así que la tarjeta
+   ocupa casi todo el ancho disponible para que se vea bien en cualquier tamaño. */
+.cell {
+  flex: 0 0 88%;
+  min-width: 0;
+  scroll-snap-align: center;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  transform: translateY(-50%);
+  border: 1px solid var(--border-default);
+  border-radius: 999px;
+  background: var(--bg-panel);
+  color: var(--text-title);
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.arrow:hover:not(:disabled) {
+  border-color: var(--border-active);
+  box-shadow: var(--glow-primary);
+}
+
+.arrow:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+/* En el borde la flecha desaparece: no hay más tarjetas en ese sentido. */
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.prev {
+  left: -8px;
+}
+
+.next {
+  right: -8px;
+}
+
+.activeTitle {
+  color: var(--text-title);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.3;
+  text-align: center;
+}
+
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  padding: 0;
+  border: none;
+  border-radius: 999px;
+  background: var(--text-muted);
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.dot:hover {
+  background: var(--text-base);
+}
+
+.dot:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+.dotActive {
+  background: var(--action-primary);
+  transform: scale(1.2);
+}
+
+/* En pantallas anchas cabe más de una tarjeta a la vista, pero sigue siendo
+   un carrusel con snap: la tarjeta activa queda centrada. */
+@media (min-width: 900px) {
+  .cell {
+    flex-basis: 70%;
+  }
+}
+
+@media (min-width: 1400px) {
+  .cell {
+    flex-basis: 60%;
+  }
+}
+
+/* En mobile el desplazamiento es por swipe; las flechas estorban, quedan
+   los dots como control e indicador. */
+@media (max-width: 768px) {
+  .arrow {
+    display: none;
+  }
+}

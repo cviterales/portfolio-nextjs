@@ -1,0 +1,59 @@
+.caption {
+  margin: 18px 0 0;
+  text-align: center;
+}
+
+.steps {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+
+.chip {
+  padding: 6px 14px;
+  border: 1px solid;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.captionBody {
+  min-height: 44px;
+  margin-top: 14px;
+}
+
+.captionText {
+  max-width: 520px;
+  margin: 0 auto;
+  color: var(--diagram-muted);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* En pantallas chicas los chips y el caption se compactan para dejarle más
+   aire al diagrama. */
+@media (max-width: 768px) {
+  .caption {
+    margin-top: 12px;
+  }
+
+  .steps {
+    gap: 5px;
+  }
+
+  .chip {
+    padding: 4px 9px;
+    font-size: 10px;
+  }
+
+  .captionBody {
+    min-height: 34px;
+    margin-top: 10px;
+  }
+
+  .captionText {
+    font-size: 12px;
+    line-height: 1.45;
+  }
+}

@@ -1,28 +1,29 @@
 {
-  "name": "portfolio",
-  "version": "1.3.1",
+  "name": "portfolio-nextjs",
+  "version": "2.0.0",
   "private": true,
-  "packageManager": "pnpm@12.1.0",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "lint": "eslint",
+    "tokens": "node scripts/generate-tokens.mjs"
   },
   "dependencies": {
-    "framer-motion": "^13.2.0",
-    "next": "^16.3.4",
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0",
-    "react-icons": "^5.7.0",
-    "react-intersection-observer": "^11.0.1",
-    "sass": "^1.34.1"
+    "framer-motion": "^14.9.0",
+    "motion": "^14.9.0",
+    "next": "16.4.3",
+    "react": "19.3.0",
+    "react-dom": "19.3.0"
   },
   "devDependencies": {
-    "@next/bundle-analyzer": "^16.3.4"
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.4.3",
+    "eslint-config-prettier": "^10.1.8",
+    "typescript": "^5"
   },
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "@parcel/watcher"
-    ]
-  }
+  "packageManager": "pnpm@12.3.4"
 }

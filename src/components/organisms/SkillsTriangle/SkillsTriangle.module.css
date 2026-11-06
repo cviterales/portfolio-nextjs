@@ -1,0 +1,49 @@
+/*
+ * --tile se calcula para que la fila más ancha (--columns logos) entre en el
+ * ancho disponible, con un máximo de 56px.
+ */
+.layout {
+  --gap: clamp(6px, 1.6vw, 16px);
+  /* Padding lateral para que al hacer hover (los logos crecen y suben) los de
+     los extremos no se recorten. Se descuenta en el cálculo del tile. */
+  --pad: 16px;
+  --tile: clamp(
+    16px,
+    calc(
+      (100vw - 40px - 2 * var(--pad) - (var(--columns) - 1) * var(--gap)) /
+        var(--columns)
+    ),
+    56px
+  );
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--gap);
+  padding: 8px var(--pad) 28px;
+}
+
+/* Grilla mobile: logos en línea que hacen wrap en las filas necesarias. Oculta
+   en desktop (ahí manda el triángulo). */
+.grid {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .triangle {
+    display: none;
+  }
+
+  .grid {
+    --tile: 56px;
+    --gap: 12px;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: var(--gap);
+    padding: 8px 16px 28px;
+    list-style: none;
+  }
+}

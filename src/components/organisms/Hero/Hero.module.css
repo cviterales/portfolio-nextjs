@@ -1,0 +1,112 @@
+.hero {
+  width: 100%;
+  padding: 48px 0 24px;
+  background: var(--bg-surface);
+}
+
+.stage {
+  position: relative;
+  min-height: 560px;
+}
+
+/*
+ * Dos marcos de solo borde. El primero va detrás de la franja (en el DOM
+ * antes), así su lado izquierdo queda tapado. El segundo, `frameFront`, va
+ * por delante y sus líneas se ven sobre la franja.
+ */
+.frame {
+  position: absolute;
+  top: 40%;
+  right: 0;
+  bottom: 0;
+  left: 2%;
+  border: 1px solid var(--border-default);
+  border-radius: 20px;
+}
+
+.frameFront {
+  left: 22%;
+}
+
+/* Franja gris que se degrada hasta el negro del fondo de la página. */
+.band {
+  width: 100%;
+  position: absolute;
+  top: 34%;
+  right: 6%;
+  bottom: 8%;
+  left: 0;
+  border-radius: 20px;
+  background: linear-gradient(
+    to bottom,
+    var(--bg-panel) 0%,
+    var(--bg-surface) 100%
+  );
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 28px;
+  width: 58%;
+  min-height: 560px;
+  padding: 0 0 8% 4%;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  color: var(--text-title);
+  font-size: 60px;
+  font-weight: 300;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+.name {
+  width: fit-content;
+  background: var(--action-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 700;
+}
+
+.description {
+  max-width: 480px;
+  color: var(--text-muted);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+  .stage {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+  }
+
+  .band {
+    top: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  .frame {
+    display: none;
+  }
+
+  .content {
+    width: 100%;
+    min-height: 0;
+    padding: 40px 24px 24px;
+  }
+
+  .title {
+    font-size: 40px;
+  }
+}

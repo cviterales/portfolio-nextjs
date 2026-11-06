@@ -1,0 +1,27 @@
+.figure {
+  margin: 0;
+  padding: clamp(12px, 3vw, 28px);
+  border: 1px solid var(--diagram-border);
+  border-radius: 20px;
+  background: linear-gradient(
+    180deg,
+    var(--diagram-surface) 0%,
+    var(--diagram-bg) 100%
+  );
+  color: var(--text-title);
+}
+
+.svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+/* En mobile se recorta el padding para que el diagrama gane ancho útil. */
+@media (max-width: 768px) {
+  .figure {
+    padding: 10px;
+    border-radius: 14px;
+  }
+}

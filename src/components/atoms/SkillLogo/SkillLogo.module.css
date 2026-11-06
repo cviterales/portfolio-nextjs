@@ -1,0 +1,87 @@
+/* El tamaño (--tile) lo define el organismo para ajustarse al ancho. */
+.skill {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--tile, 56px);
+  height: var(--tile, 56px);
+  border: 1px solid var(--border-default);
+  border-radius: 14px;
+  background: var(--bg-surface-alt);
+  transition:
+    transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+/* Apagado: silueta blanca tenue, sirve también para logos negros. */
+.logo {
+  width: 55%;
+  height: 55%;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  opacity: 0.3;
+  transition:
+    filter 0.25s ease,
+    opacity 0.25s ease,
+    transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.label {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  padding: 4px 8px;
+  border-radius: 6px;
+  background: var(--bg-panel);
+  color: var(--text-title);
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -4px);
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+/* Encendido: sube, crece, se ilumina y muestra el color original. */
+.skill:hover {
+  z-index: 1;
+  transform: translateY(-8px) scale(1.18);
+  border-color: var(--border-active);
+  background-color: var(--color-gray-100);
+  box-shadow: var(--glow-primary);
+}
+
+.skill:hover .logo {
+  filter: none;
+  opacity: 1;
+  transform: rotate(-6deg);
+}
+
+.skill:hover .label {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skill,
+  .logo,
+  .label {
+    transition: none;
+  }
+
+  .skill:hover {
+    transform: none;
+  }
+
+  .skill:hover .logo {
+    transform: none;
+  }
+}
+
+

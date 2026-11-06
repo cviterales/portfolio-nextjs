@@ -1,0 +1,23 @@
+.iconLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border: 1px solid var(--border-default);
+  border-radius: 50%;
+  color: var(--text-muted);
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.iconLink:hover {
+  color: var(--text-label);
+  border-color: var(--border-active);
+}
+
+.iconLink:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}

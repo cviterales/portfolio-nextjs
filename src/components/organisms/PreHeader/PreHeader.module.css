@@ -1,0 +1,30 @@
+.preHeader {
+  width: 100%;
+  background: var(--bg-surface-alt);
+  border-bottom: 1px solid var(--border-default);
+}
+
+/* En mobile el preheader no se muestra; sus sociales pasan al header. */
+@media (max-width: 768px) {
+  .preHeader {
+    display: none;
+  }
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 10px 20px;
+}
+
+.contact {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}

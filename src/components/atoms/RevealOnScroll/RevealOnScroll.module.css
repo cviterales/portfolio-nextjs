@@ -1,0 +1,22 @@
+/* Reserva su espacio para que el header no se mueva al aparecer. */
+.reveal {
+  visibility: hidden;
+  opacity: 0;
+  transform: translateX(8px);
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease,
+    visibility 0.3s;
+}
+
+.visible {
+  visibility: visible;
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    transition: none;
+  }
+}

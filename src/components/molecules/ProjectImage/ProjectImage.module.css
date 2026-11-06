@@ -1,0 +1,54 @@
+.frame {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+  background: var(--bg-surface);
+}
+
+/* La captura entra a ancho completo; su alto real queda definido por la imagen. */
+.shot {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* En el modal el contenedor acota el alto y la imagen recorre su largo con un
+   desplazamiento vertical en loop (ida y vuelta). */
+.animated {
+  position: relative;
+  /* Alto propio del visor por el que se recorre la captura. No depende de la
+     cadena flex del modal, que con container-type colapsaría a 0. */
+  height: min(68vh, 560px);
+  /* Habilita las unidades de container query (cqh) para el cálculo del recorrido. */
+  container-type: size;
+}
+
+.animated .shot {
+  animation: autoscroll 18s ease-in-out infinite alternate;
+}
+
+/* Pausa el recorrido al pasar el mouse para poder mirar con calma. */
+.animated:hover .shot {
+  animation-play-state: paused;
+}
+
+@keyframes autoscroll {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    /* Sube la imagen hasta dejar ver su parte inferior dentro del marco. */
+    transform: translateY(calc(-100% + 100cqh));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animated {
+    overflow-y: auto;
+  }
+
+  .animated .shot {
+    animation: none;
+  }
+}

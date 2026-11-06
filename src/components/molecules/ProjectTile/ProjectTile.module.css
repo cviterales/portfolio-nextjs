@@ -1,0 +1,64 @@
+.tile {
+  position: relative;
+  display: block;
+  width: 100%;
+  /* Alto fijo para que todas las tarjetas queden parejas pese a que cada
+     diagrama tiene un viewBox con distinta proporción. */
+  height: 420px;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid var(--border-default);
+  border-radius: 16px;
+  background: var(--bg-surface-alt);
+  cursor: pointer;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .tile {
+    height: 340px;
+  }
+}
+
+.tile:hover {
+  border-color: var(--border-active);
+  box-shadow: var(--shadow-elevation), var(--glow-primary);
+}
+
+.tile:focus-visible {
+  outline: none;
+  border-color: var(--border-active);
+  box-shadow: var(--focus-ring);
+}
+
+/* El SVG no debe capturar el clic: lo maneja la tarjeta. */
+.media {
+  display: block;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* El figure llena la tarjeta en columna; el SVG toma el espacio flexible y se
+   contiene (preserveAspectRatio "meet" por defecto) sin recortarse. */
+.media > :global(figure) {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+}
+
+.media :global(svg) {
+  flex: 1 1 auto;
+  min-height: 0;
+  height: 100%;
+}
+
+/* Capa transparente para asegurar que todo el área sea clickable. */
+.overlay {
+  position: absolute;
+  inset: 0;
+}

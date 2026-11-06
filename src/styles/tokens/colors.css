@@ -1,0 +1,46 @@
+/* Generado por scripts/generate-tokens.mjs desde src/styles/palette.mjs. No editar a mano. */
+:root {
+  /* Primitivos */
+  --color-black-950: #09090b;
+  --color-black-900: #0f0f12;
+  --color-black-800: #16161a;
+  --color-black-700: #1f1f25;
+  --color-gray-500: #6b6b76;
+  --color-gray-300: #a1a1ad;
+  --color-gray-100: #e4e4ea;
+  --color-white: #ffffff;
+  --color-orange-600: #fd4b19;
+  --color-orange-500: #fd7a19;
+  --color-orange-400: #ffa24d;
+  --color-orange-300: #f5a04f;
+  --color-red-500: #ff5252;
+  --color-diagram-surface: #111114;
+  --color-diagram-surface-2: #17171b;
+  --color-diagram-border: #2a2a31;
+  --color-diagram-idle: #3a3a43;
+  --color-diagram-muted: #9aa3b8;
+  --color-diagram-request: #8ea8ff;
+  --color-diagram-ink: #1a0d04;
+
+  /* Semánticos */
+  --bg-surface: var(--color-black-950);
+  --bg-surface-alt: var(--color-black-900);
+  --bg-panel: var(--color-black-800);
+  --bg-surface-glass: rgba(9, 9, 11, 0.8);
+  --action-primary: var(--color-orange-500);
+  --action-secondary: var(--color-orange-400);
+  --action-danger: var(--color-red-500);
+  --action-gradient: linear-gradient(135deg, var(--color-orange-400) 0%, var(--color-orange-600) 100%);
+  --action-gradient-hover: linear-gradient(135deg, var(--color-orange-400) 0%, var(--color-orange-500) 100%);
+  --text-base: var(--color-gray-100);
+  --text-muted: var(--color-gray-300);
+  --text-title: var(--color-white);
+  --text-label: var(--color-orange-400);
+  --text-on-action: var(--color-white);
+  --border-default: var(--color-black-700);
+  --border-primary: var(--color-orange-500);
+  --border-active: var(--color-orange-400);
+  --shadow-elevation: 0 10px 30px -10px rgba(0, 0, 0, 0.7);
+  --glow-primary: 0 0 20px rgba(253, 122, 25, 0.35);
+  --focus-ring: 0 0 0 2px var(--color-orange-400);
+}

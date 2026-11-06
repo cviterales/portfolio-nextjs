@@ -16,7 +16,7 @@ export const PROJECTS: readonly ProjectContent[] = [
     title: "Personal — Home & e-commerce",
     summary:
       "Work on personal.com.ar: the home and store experience, with promotions, product listings and plan selection.",
-    tags: ["Next.js", "E-commerce", "Performance"],
+    tags: ["Next.js", "React", "Sass", "Zustand", "Typescript", "Personalization", "E-commerce", "Microfrontend"],
     media: PROJECT_MEDIA.image,
     image: {
       src: "/images/personal.jpg",
@@ -35,7 +35,7 @@ export const PROJECTS: readonly ProjectContent[] = [
     id: "personal-internet",
     title: "Personal — Internet",
     summary: "Internet plans landing on personal.com.ar.",
-    tags: ["Next.js", "Landing"],
+    tags: ["Next.js", "React", "Sass", "Zustand", "Typescript", "Personalization", "Microfrontend"],
     media: PROJECT_MEDIA.image,
     image: {
       src: "/images/internet.png",
@@ -74,7 +74,7 @@ export const PROJECTS: readonly ProjectContent[] = [
     id: "personal-smarthome",
     title: "Personal — Smart Home",
     summary: "Smart Home products landing on personal.com.ar.",
-    tags: ["Next.js", "Landing"],
+    tags: ["Next.js", "React", "Sass", "Zustand", "Typescript", "Personalization", "Microfrontend"],
     media: PROJECT_MEDIA.image,
     image: {
       src: "/images/smarfthome.png",
@@ -85,7 +85,7 @@ export const PROJECTS: readonly ProjectContent[] = [
     id: "personal-contacto",
     title: "Personal — Contact",
     summary: "Contact experience on personal.com.ar.",
-    tags: ["Next.js", "Forms"],
+    tags: ["Next.js", "React", "Sass", "Zustand", "Typescript", "Personalization", "Microfrontend"],
     media: PROJECT_MEDIA.image,
     image: {
       src: "/images/contacto.png",
@@ -96,7 +96,7 @@ export const PROJECTS: readonly ProjectContent[] = [
     id: "personal-flow",
     title: "Flow",
     summary: "Flow streaming experience.",
-    tags: ["Next.js", "Streaming"],
+    tags: ["Next.js", "React", "Sass", "Zustand", "Typescript", "Personalization", "Microfrontend"],
     media: PROJECT_MEDIA.image,
     image: {
       src: "/images/flow.png",

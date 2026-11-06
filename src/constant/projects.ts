@@ -19,7 +19,7 @@ export const PROJECTS: readonly ProjectContent[] = [
     tags: ["Next.js", "React", "Sass", "Zustand", "Typescript", "Personalization", "E-commerce", "Microfrontend"],
     media: PROJECT_MEDIA.image,
     image: {
-      src: "/images/personal.jpg",
+      src: "/images/personal.webp",
       alt: "Full-page capture of the personal.com.ar home and store",
     },
   },
@@ -38,7 +38,7 @@ export const PROJECTS: readonly ProjectContent[] = [
     tags: ["Next.js", "React", "Sass", "Zustand", "Typescript", "Personalization", "Microfrontend"],
     media: PROJECT_MEDIA.image,
     image: {
-      src: "/images/internet.png",
+      src: "/images/internet.webp",
       alt: "Full-page capture of the personal.com.ar internet section",
     },
   },
@@ -58,7 +58,7 @@ export const PROJECTS: readonly ProjectContent[] = [
     tags: ["Next.js", "Landing"],
     media: PROJECT_MEDIA.image,
     image: {
-      src: "/images/pymes.png",
+      src: "/images/pymes.webp",
       alt: "Full-page capture of the personal.com.ar pymes section",
     },
   },
@@ -77,7 +77,7 @@ export const PROJECTS: readonly ProjectContent[] = [
     tags: ["Next.js", "React", "Sass", "Zustand", "Typescript", "Personalization", "Microfrontend"],
     media: PROJECT_MEDIA.image,
     image: {
-      src: "/images/smarfthome.png",
+      src: "/images/smarfthome.webp",
       alt: "Full-page capture of the personal.com.ar smart home section",
     },
   },
@@ -88,7 +88,7 @@ export const PROJECTS: readonly ProjectContent[] = [
     tags: ["Next.js", "React", "Sass", "Zustand", "Typescript", "Personalization", "Microfrontend"],
     media: PROJECT_MEDIA.image,
     image: {
-      src: "/images/contacto.png",
+      src: "/images/contacto.webp",
       alt: "Full-page capture of the personal.com.ar contact section",
     },
   },
@@ -99,7 +99,7 @@ export const PROJECTS: readonly ProjectContent[] = [
     tags: ["Next.js", "React", "Sass", "Zustand", "Typescript", "Personalization", "Microfrontend"],
     media: PROJECT_MEDIA.image,
     image: {
-      src: "/images/flow.png",
+      src: "/images/flow.webp",
       alt: "Full-page capture of the Flow landing",
     },
   },

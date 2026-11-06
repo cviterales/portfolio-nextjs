@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import styles from "./ProcessFlow.module.css";
 import ProcessStep from "@/components/molecules/ProcessStep/ProcessStep";
 import type { ProcessStepContent } from "@/types/process";
@@ -9,13 +9,35 @@ type ProcessFlowProps = {
   steps: readonly ProcessStepContent[];
 };
 
-export default function ProcessFlow({ steps }: ProcessFlowProps) {
-  // Índices de los pasos que ya recibieron hover: quedan encendidos.
-  const [activated, setActivated] = useState<readonly number[]>([]);
+/** Milisegundos entre el encendido de un nodo y el siguiente en la cascada. */
+const CASCADE_DELAY_MS = 450;
 
-  function activate(index: number): void {
-    setActivated((prev) => (prev.includes(index) ? prev : [...prev, index]));
+/**
+ * Al hacer hover (o tap en mobile) sobre cualquier nodo se dispara una cascada
+ * que enciende todos los nodos en orden: de izquierda a derecha en desktop y de
+ * arriba hacia abajo en mobile (el mismo orden del array). Una vez disparada,
+ * los nodos quedan encendidos.
+ */
+export default function ProcessFlow({ steps }: ProcessFlowProps) {
+  // Cantidad de nodos encendidos, desde el inicio del array.
+  const [activeCount, setActiveCount] = useState(0);
+  const startedRef = useRef(false);
+
+  function startCascade(): void {
+    if (startedRef.current) return;
+    startedRef.current = true;
+    setActiveCount(1);
   }
+
+  useEffect(() => {
+    if (activeCount === 0 || activeCount >= steps.length) return;
+
+    const timer = window.setTimeout(() => {
+      setActiveCount((prev) => prev + 1);
+    }, CASCADE_DELAY_MS);
+
+    return () => window.clearTimeout(timer);
+  }, [activeCount, steps.length]);
 
   return (
     <ol
@@ -28,10 +50,10 @@ export default function ProcessFlow({ steps }: ProcessFlowProps) {
           label={label}
           lowered={index % 2 === 1}
           hasNext={index < steps.length - 1}
-          active={activated.includes(index)}
+          active={index < activeCount}
           // La flecha hacia el siguiente paso se enciende cuando este se activa.
-          connectorActive={activated.includes(index + 1)}
-          onActivate={() => activate(index)}
+          connectorActive={index + 1 < activeCount}
+          onActivate={startCascade}
         />
       ))}
     </ol>

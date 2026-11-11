@@ -1,0 +1,42 @@
+# Sr Software Engineer - Cristian Viterales
+
+> Cristian Viterales es un Ingeniero de Software Senior (desde 2009) basado en Mar del Plata, Argentina, especializado en el diseño, desarrollo y arquitectura de soluciones de software confiables y escalables. Este archivo proporciona un mapa estructurado de su perfil profesional y stack tecnológico para modelos de lenguaje (LLMs).
+
+## Información de Contacto y Canales Oficiales
+- **Email:** cviterales@gmail.com
+- **Ubicación:** Mar del Plata, Buenos Aires, Argentina
+- **Sitio Web Principal:** https://portfolio-cviterales.vercel.app/
+
+## Proceso de Trabajo (Metodología)
+1. Descubrimiento y Alineación (Discovery & Alignment)
+2. Análisis Técnico (Technical Analysis)
+3. Planificación y Estimación (Planning & Estimation)
+4. Prueba de Concepto y Validación (POC & Validation)
+5. Construcción y Aseguramiento de Calidad (Build & QA)
+6. Soporte y Evolución (Support & Evolution)
+
+## Stack Tecnológico Clave
+
+### Frontend y Client-Side
+- **Lenguajes:** JavaScript, TypeScript, HTML5, CSS3.
+- **Frameworks & Librerías:** React, Next.js, Angular, Remix, Vite, React Native, Stencil.
+- **Estilos:** Tailwind CSS, Sass.
+- **Gestión de Estado:** Redux, Zustand.
+- **Gráficos e Interacción:** Three.js.
+
+### Backend, Infraestructura y Arquitectura
+- **Entornos y Frameworks:** Node.js, NestJS, Express, PHP.
+- **Mensajería y Eventos:** Kafka, Socket.IO.
+- **Bases de Datos & Caché:** MySQL, PostgreSQL, MongoDB, Firebase, Redis.
+- **DevOps e Infraestructura:** AWS, Docker, Argo CD, OpenTelemetry, Git, GitHub, GitLab.
+- **Gestión y Herramientas:** Rollup, Yarn, npm, Jira, Figma.
+
+### Calidad y Pruebas (QA)
+- **Testing:** Jest, Playwright, Cypress.
+
+## Arquitecturas y Proyectos Destacados (Selected Work)
+El portfolio presenta soluciones complejas orientadas a la arquitectura avanzada de software:
+- **Runtime Component Sharing con Microfrontends:** Implementación de registros de componentes compartidos e infraestructura servida en tiempo de ejecución.
+- **Librerías de UI Propias:** Empaquetado distribuido con Rollup y publicado en registros privados (JFrog Artifactory) con soporte ESM/CJS.
+- **Personalización e ISR:** Estrategias de Incremental Static Regeneration (ISR) combinadas con eventos en navegador para personalización de landings mediante variantes de CMS en tiempo real.
+- **Librerías de Autenticación Centralizada (SSO):** Flujos OpenID Connect (OIDC) empaquetados y distribuidos de forma independiente para control unificado de sesiones sin reescritura de código.

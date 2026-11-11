@@ -18,6 +18,11 @@ export const SOCIAL_LINKS: readonly SocialLink[] = [
     href: "https://github.com/cviterales",
     label: "GitHub",
   },
+  {
+    icon: ICON_NAME.ia,
+    href: "/llms.txt",
+    label: "IA",
+  },
 ];
 
 export const CONTACT_EMAIL = "cviterales@gmail.com";

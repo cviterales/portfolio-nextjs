@@ -21,6 +21,9 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
+      <head>
+        <link rel="alternate" type="text/plain" title="LLM Guide" href="/llms.txt"></link>
+      </head>
       <body>{children}</body>
       <Script 
         strategy="lazyOnload" 

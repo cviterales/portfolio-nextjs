@@ -1,14 +1,56 @@
-.flow {
-  display: grid;
-  align-items: start;
-  padding-bottom: 8px;
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+}
+
+/* Fondo punteado como en el diseño de referencia; sin scroll en ningún ancho. */
+.panel {
+  padding: 44px 16px 36px;
+  border: 1px solid var(--border-default);
+  border-radius: 12px;
+  background-color: var(--bg-surface);
+  background-image: radial-gradient(
+    var(--diagram-surface-2) 1px,
+    transparent 1px
+  );
+  background-size: 22px 22px;
+}
+
+.stage {
+  position: relative;
+  margin-inline: auto;
+}
+
+.links {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.nodes {
+  margin: 0;
+  padding: 0;
   list-style: none;
 }
 
-@media (max-width: 768px) {
-  /* Pisa el número de columnas inline: una sola columna, zigzag vertical. */
-  .flow {
-    grid-template-columns: 1fr !important;
-    gap: 28px;
-  }
+.item {
+  position: absolute;
+  z-index: 2;
+}
+
+.description {
+  min-height: 3em;
+  max-width: 460px;
+  margin: 0 auto;
+  color: var(--text-base);
+  text-align: center;
+}
+
+.description p {
+  margin: 0;
 }

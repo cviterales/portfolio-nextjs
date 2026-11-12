@@ -12,6 +12,8 @@ type ProjectImageProps = {
 };
 
 /** Velocidad del recorrido en píxeles (de la imagen renderizada) por segundo. */
+/** Ancho real de la tarjeta: evita pedir variantes enormes para un preview. */
+const CARD_SIZES = "(min-width: 769px) 640px, 88vw";
 const SCROLL_SPEED = 140;
 /** Límites de duración para que ni la más corta ni la más larga se sientan mal. */
 const MIN_DURATION = 6;
@@ -66,8 +68,8 @@ export default function ProjectImage({ image, animate = false }: ProjectImagePro
         alt={image.alt}
         width={0}
         height={0}
-        sizes="100vw"
-        loading="lazy"
+        sizes={animate ? "100vw" : CARD_SIZES}
+        loading={animate ? "lazy" : "eager"}
         style={style}
         onLoad={onLoad}
       />

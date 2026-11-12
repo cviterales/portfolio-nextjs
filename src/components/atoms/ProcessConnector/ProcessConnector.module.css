@@ -1,0 +1,35 @@
+.base {
+  fill: none;
+  stroke: var(--diagram-idle);
+  stroke-width: 1.5;
+  stroke-dasharray: 3 6;
+}
+
+.stroke,
+.head {
+  fill: none;
+  stroke: var(--diagram-accent);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.head {
+  opacity: 0;
+}
+
+.pulse {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  width: 8px;
+  height: 8px;
+  margin: -4px 0 0 -4px;
+  border-radius: 50%;
+  background: var(--color-orange-300);
+  box-shadow: 0 0 12px var(--diagram-accent);
+  opacity: 0;
+  offset-rotate: 0deg;
+  pointer-events: none;
+}

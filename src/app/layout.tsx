@@ -22,15 +22,22 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
       <head>
-        <link rel="alternate" type="text/plain" title="LLM Guide" href="/llms.txt"></link>
+        <link
+          rel="alternate"
+          type="text/plain"
+          title="LLM Guide"
+          href="/llms.txt"
+        ></link>
       </head>
       <body>{children}</body>
-      <Script 
-        strategy="lazyOnload" 
-        src="https://umami-gamma-beryl.vercel.app/script.js" 
-        data-website-id="82c70314-65a5-46ec-8bdc-062f16115c8d" 
-        data-performance="true"
-      />
+      {process.env.NODE_ENV !== "development" && (
+        <Script
+          strategy="lazyOnload"
+          src="https://umami-gamma-beryl.vercel.app/script.js"
+          data-website-id="82c70314-65a5-46ec-8bdc-062f16115c8d"
+          data-performance="true"
+        />
+      )}
     </html>
   );
 }

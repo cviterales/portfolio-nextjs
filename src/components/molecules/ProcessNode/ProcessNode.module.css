@@ -1,0 +1,183 @@
+.node {
+  position: relative;
+  width: 150px;
+  height: 150px;
+}
+
+.button {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+.button:focus-visible {
+  outline: 2px solid var(--action-secondary);
+  outline-offset: 6px;
+}
+
+.badge {
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  z-index: 3;
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border: 1px solid var(--border-default);
+  border-radius: 50%;
+  background: var(--bg-surface);
+  color: var(--text-muted);
+  font-size: 11px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  transition:
+    border-color 0.4s,
+    color 0.4s;
+}
+
+.on .badge {
+  border-color: var(--action-primary);
+  color: var(--action-primary);
+}
+
+.orbit {
+  position: absolute;
+  inset: -14px;
+  border: 1px dashed var(--diagram-border);
+  border-radius: 50%;
+  transition: border-color 0.4s;
+}
+
+.orbit::after {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  margin-left: -4px;
+  border-radius: 50%;
+  background: var(--action-primary);
+  box-shadow: 0 0 12px var(--action-primary);
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+.on .orbit {
+  border-color: var(--action-primary);
+  animation: spin 6s linear infinite;
+}
+
+.on .orbit::after {
+  opacity: 1;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.ring {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+  pointer-events: none;
+}
+
+.ring circle {
+  fill: none;
+  stroke-width: 2;
+}
+
+.track {
+  stroke: var(--diagram-idle);
+}
+
+.arc {
+  stroke: var(--action-primary);
+  stroke-linecap: round;
+  opacity: 0;
+}
+
+.disc {
+  position: absolute;
+  inset: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 30% 22%,
+    var(--diagram-surface-2),
+    var(--bg-surface-alt) 72%
+  );
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.07),
+    inset 0 -14px 26px rgba(0, 0, 0, 0.45);
+  transition: box-shadow 0.5s;
+}
+
+.on .disc {
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.12),
+    var(--glow-primary);
+}
+
+.icon {
+  width: 26px;
+  height: 26px;
+  fill: none;
+  stroke: var(--text-muted);
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition:
+    stroke 0.4s,
+    transform 0.4s;
+}
+
+.on .icon {
+  stroke: var(--action-primary);
+  transform: scale(1.12);
+}
+
+.label {
+  padding: 0 16px;
+  color: var(--text-base);
+  font-size: 12.5px;
+  font-weight: 600;
+  line-height: 1.25;
+  text-align: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .on .orbit {
+    animation: none;
+  }
+
+  .badge,
+  .orbit,
+  .orbit::after,
+  .disc,
+  .icon {
+    transition: none;
+  }
+
+  .on .icon {
+    transform: none;
+  }
+}
